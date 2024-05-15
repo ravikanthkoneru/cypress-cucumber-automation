@@ -7,7 +7,7 @@
     "cypress:open": "cypress open",
     "test": "cypress run",
     "report": "node reporter.js",
-    "chrome:noexit": "cypress run --headed --no-exit --browser chrome --env tags='@test'",
+    "chrome:noexit": "cypress run --headed --no-exit --browser chrome",
     "cy:parallel": "cypress-parallel -s test -t 4 -d cypress/e2e/features/ -m false",
     "lint:eslint": "eslint .",
     "lint:tsc": "tsc --noEmit",

@@ -1,0 +1,61 @@
+{
+  "name": "cypress-cucumber-automation",
+  "version": "1.0.0",
+  "description": "BDD, Cypress, Cucumber and Typescript",
+  "main": "",
+  "scripts": {
+    "cypress:open": "cypress open",
+    "test": "cypress run",
+    "report": "node reporter.js",
+    "chrome:noexit": "cypress run --headed --no-exit --browser chrome --env tags='@test'",
+    "cy:parallel": "cypress-parallel -s test -t 4 -d cypress/e2e/features/ -m false",
+    "lint:eslint": "eslint .",
+    "lint:tsc": "tsc --noEmit",
+    "lint": "npm run lint:eslint; npm run lint:tsc",
+    "lint:fix": "npm run lint:eslint -- --fix"
+  },
+  "keywords": [
+    "BDD",
+    "cucumber",
+    "cypress",
+    "typescript"
+  ],
+  "author": {
+    "name": "Ravi Koneru",
+    "email": "Ravik.2006@hotmail.com",
+    "url": "https://github.com/ravikanthkoneru/cypress-cucumber-automation"
+  },
+  "license": "",
+  "dependencies": {
+    "@badeball/cypress-cucumber-preprocessor": "^20.0.5",
+    "@bahmutov/cypress-esbuild-preprocessor": "^2.2.0",
+    "cypress": "^13.9.0",
+    "cypress-parallel": "^0.14.0"
+  },
+  "devDependencies": {
+    "@types/cypress": "^1.1.3",
+    "@types/node": "^20.12.12",
+    "@typescript-eslint/eslint-plugin": "^6.18.0",
+    "@typescript-eslint/parser": "^6.18.0",
+    "eslint": "^8.56.0",
+    "eslint-config-standard": "^17.1.0",
+    "eslint-plugin-import": "^2.29.1",
+    "eslint-plugin-jsonc": "^2.11.2",
+    "eslint-plugin-n": "^16.6.1",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^6.1.1",
+    "multiple-cucumber-html-reporter": "^3.6.2",
+    "typescript": "^5.4.5"
+  },
+  "cypress-cucumber-preprocessor": {
+    "nonGlobalStepDefinitions": false,
+    "json": {
+      "enabled": true,
+      "output": "report/cucumber-json/report.json",
+      "formatter": "./jsonFormatter/cucumber-json-formatter"
+    },
+    "stepDefinitions": [
+      "cypress/e2e/steps/**/*.ts"
+    ]
+  }
+}

@@ -41,7 +41,7 @@
 # How to run the tests in chrome browser headed mode
 
 - Step 1: Open the project root folder in Terminal
-- Step 2: npm run chrome:noexit
+- Step 2: npm run chrome
 
 # HTML report path
 

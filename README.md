@@ -3,8 +3,9 @@
 - Install Node Version > V15
 - Install npm
 
-# Automation Tech Stacks: 
-Cypress, Cucumber and Typescript
+# Automation Tech Stacks:
+
+- Cypress, Cucumber and Typescript
 
 ## Code checkout and Framework Setup
 
@@ -18,30 +19,30 @@ Cypress, Cucumber and Typescript
 
 # How to run the tests
 
-Step 1: Open the project root folder in Terminal
-step 2: npm test
+- Step 1: Open the project root folder in Terminal
+- Step 2: npm test
 
 # How to Genereate multiple Cucumber html reporter
 
-Step 1: Open the project root folder in Terminal
-step 2: npm test
-Stpe 3: npm run report
+- Step 1: Open the project root folder in Terminal
+- Step 2: npm test
+- Stpe 3: npm run report
 
 # Running tagged test tests
 
-Step 1: Open the project root folder in Terminal
-step 2: npx cypress run -e TAGS="@test"
+- Step 1: Open the project root folder in Terminal
+- Step 2: npx cypress run -e TAGS="@test"
 
 # How to run the tests in parallel Feature level
 
-Step 1: Open the project root folder in Terminal
-step 2: npm run cy:parallel
+- Step 1: Open the project root folder in Terminal
+- Step 2: npm run cy:parallel
 
 # How to run the tests in chrome browser headed mode
 
-Step 1: Open the project root folder in Terminal
-step 2: npm run chrome:noexit
+- Step 1: Open the project root folder in Terminal
+- Step 2: npm run chrome:noexit
 
 # HTML report path
 
-report\index.html
+- report\index.html

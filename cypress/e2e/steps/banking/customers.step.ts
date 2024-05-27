@@ -15,7 +15,7 @@ When(/^I fill the search input with the "([^"]*)"$/, function (search_text) {
 Then(/^the text "([^"]*)" should be visible on the result table$/, function (search_result){
 	console.log(search_result);
     this.customer_page = new CustomerPage()
-    this.customer_page.getSearchResult()
+    this.customer_page.getSearchResult(search_result)
 });
 
 Given(/^I click on the Add Customer tab$/, function () {

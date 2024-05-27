@@ -25,7 +25,7 @@ export default class CustomerPage {
     }
 
     getSearchResult(text: string): void {
-        cy.get(this.CSS_FIRSTCELL_VALUE).should('be.visible')
+        cy.get(this.CSS_FIRSTCELL_VALUE).should('be.visible').should('have.text',text)
     }
 
     add_customer_details(firstname: string, lastname: string, postalcode: string): void{

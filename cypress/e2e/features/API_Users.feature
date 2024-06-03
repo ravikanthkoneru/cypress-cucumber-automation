@@ -80,7 +80,7 @@ Feature: User API
     Scenario Outline: Registering new user sceanrios
         Given I have the API endpoint "/register"
         When I send a POST registration request to the endpoint with the data "<email>" and "<password>"
-        Then the response status should be "<code>"
+        Then the response status code should be "<code>"
         
         Examples:
         | email                  | password    | code  |

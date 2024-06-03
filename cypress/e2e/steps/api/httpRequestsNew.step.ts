@@ -177,8 +177,10 @@ When("I send a POST registration request to the endpoint with the data {string} 
     })
 });
 
-Then("the response status should be {string}", function(code) {
-    expect(statuscode).respondsTo('equal', String);
-    
+Then('the response status code should be {string}', (Code: string) => {
+  cy.request('url: endpoint').its('status').should('equal', Code);
+//   cy.request('your-api-endpoint').its('status').should('equal', '200');
+
 });
+
 

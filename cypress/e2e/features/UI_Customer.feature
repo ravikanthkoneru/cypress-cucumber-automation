@@ -21,3 +21,16 @@ Feature: As a Bank Manager Search Customers on the Banking Customers tab
     |Alex     | John    |WC2N 5DX  |
     |Alen     | Weber   |WC2N 3DX  |
     Then I click on Add Customer button
+
+
+ @addIndividualCustomer
+  Scenario Outline: Add new Customers
+    Given I click on the Add Customer tab
+    When I enter customer "<firstname>" customer "<lastname>" and postalcode "<postalcode>" to add customers
+    Then I click on Add Customer button
+
+Examples:
+    |firstname|lastname |postalcode|
+    |Ravi     | Koneru  |WC2N 5DU  |
+    |Alex     | John    |WC2N 5DX  |
+    |Alen     | Weber   |WC2N 3DX  |

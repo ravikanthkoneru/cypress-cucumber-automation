@@ -21,7 +21,7 @@ async function setupNodeEvents(
 
 export default defineConfig({
     e2e: {
-        baseUrl:"https://www.globalsqa.com/angularJs-protractor/BankingProject/#/login",
+        baseUrl:"https://reqres.in/api",
         defaultCommandTimeout: 10000,
         specPattern: '**/*.feature',
         setupNodeEvents,

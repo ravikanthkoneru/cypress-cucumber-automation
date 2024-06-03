@@ -1,14 +1,13 @@
 import { Given, When, Then, DataTable } from '@badeball/cypress-cucumber-preprocessor'
 import { get } from 'cypress/types/lodash';
 
-var base_url='https://reqres.in/api'
 var endpoint = ""
 var user_name = ""
 var user_id = ""
 var statuscode
 
 Given("I have the API endpoint {string}", (uri) => {
-    endpoint = base_url + uri
+    endpoint = Cypress.config().baseUrl + uri
 	console.log("API endpoint is:" + endpoint );
 });
 
@@ -67,7 +66,7 @@ Then("the response should contain the created user with name {string}", function
 Then("a user with ID {int} exists", function(userid) {
     cy.request({
         method: 'GET', 
-        url:base_url + '/users/' + userid,
+        url:Cypress.config().baseUrl + '/users/' + userid,
     }).then(response =>{
         expect(response.status).to.equal(200)
         expect(response.body.data.id).to.equal(userid)

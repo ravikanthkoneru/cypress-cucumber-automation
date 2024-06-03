@@ -129,3 +129,56 @@ When("I send a POST request to the endpoint with the data {string} and {string}"
 
 
 });
+
+// Given(/^I have the API endpoint "([^"]*)"$/, (args1) => {
+// 	console.log(args1);
+// 	return true;
+// });
+
+When("I send a POST registation request to the endpoint with the data", function(datatable: DataTable) {
+    let email = ""
+    let password = ""
+    datatable.hashes().forEach(element => {
+        email = element.email
+        password = element.password
+    })
+    cy.request({
+        method: 'POST',
+        url: endpoint,
+        failOnStatusCode: false,
+        body:{
+            email: email,
+            password: password
+        }
+    })
+    .then(response =>{
+        user_name = response.body.name
+        statuscode = response.status
+    })
+});  
+
+
+
+
+
+When("I send a POST registration request to the endpoint with the data {string} and {string}", function (email,password) {
+	cy.request({
+        method: 'POST',
+        url: endpoint,
+        failOnStatusCode: false,
+        body:{
+            email: email,
+            password: password
+        }
+    })
+    .then(response =>{
+        user_name = response.body.name
+        statuscode = response.status
+    })
+});
+
+Then("the response status should be {string}", function(code) {
+    expect(statuscode).respondsTo('equal', String);
+    
+});
+

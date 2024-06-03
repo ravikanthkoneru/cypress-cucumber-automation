@@ -48,7 +48,44 @@ Feature: User API
         And the response should contain the created user with name "<name>"
 
         Examples:
-        | name        | job    |
-        | Ravi Koneru | leader |
+        | name         | job    |
+        | Ravi Koneru  | leader |
         | Ravi1 Koneru | leader |
         | Ravi2 Koneru | leader |
+
+    Scenario: Register a new user
+        Given I have the API endpoint "/register"
+        When I send a POST registation request to the endpoint with the data
+        | email                  | password    |
+        | eve.holt@reqres.in     | pistol      |
+        Then the response status code should be 200
+
+
+    Scenario: Register a new user with bad data
+        Given I have the API endpoint "/register"
+        When I send a POST registation request to the endpoint with the data
+        | email                  | password    |
+        | Ravi.2006@hotmail.com  | leader      |
+        Then the response status code should be 400
+
+    Scenario: Register a new user without Password 
+        Given I have the API endpoint "/register"
+        When I send a POST registation request to the endpoint with the data
+        | email                  | 
+        | eve.holt@reqres.in     |            
+        Then the response status code should be 400
+
+    
+    @apitesttest13
+    Scenario Outline: Registering new user sceanrios
+        Given I have the API endpoint "/register"
+        When I send a POST registration request to the endpoint with the data "<email>" and "<password>"
+        Then the response status should be "<code>"
+        
+        Examples:
+        | email                  | password    | code  |
+        | eve.holt@reqres.in     | pistol      | 200   |
+        | Ravi.2006@hotmail.com  | leader      | 400   |
+        | sydney@fife            |             | 400   |
+   
+       

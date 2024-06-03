@@ -110,3 +110,22 @@ When("I send a PUT request to the endpoint with the data", function(datatable: D
 Then("the response should contain the updated user with name {string}",function(username) {
     expect(user_name).to.equal(username)
 });
+
+When("I send a POST request to the endpoint with the data {string} and {string}", (name,job) => {
+	
+    cy.request({
+        method: 'POST',
+        url: endpoint,
+        body:{
+            name: name,
+            job: job
+        }
+    })
+    .then(response =>{
+        user_name = response.body.name
+        statuscode = response.status
+    })
+
+
+
+});

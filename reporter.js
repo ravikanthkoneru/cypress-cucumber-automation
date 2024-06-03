@@ -12,8 +12,10 @@ const generateReport = () => {
         },
         device: "Local Test Machine",
         platform: {
-          name: "Windows",
-          version: "11",
+          // name: "Windows",
+          // version: "11",
+          name: "OSX",
+          version: "14",
         },
       },
       disableLog: true,

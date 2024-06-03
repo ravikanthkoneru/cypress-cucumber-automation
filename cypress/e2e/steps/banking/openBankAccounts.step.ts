@@ -24,3 +24,5 @@ Then(/^the account created successfully$/, function () {
         expect(txt).to.contains('Customer added successfully with customer id :');
     })
 });
+
+

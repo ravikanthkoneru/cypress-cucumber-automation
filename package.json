@@ -4,8 +4,8 @@
   "description": "BDD, Cypress, Cucumber and Typescript",
   "main": "",
   "scripts": {
-    "cypress:open": "cypress open",
-    "test": "cypress run",
+    "cypress:open": "cypress open", 
+    "test": "cypress run", 
     "report": "node reporter.js",
     "chrome": "cypress run --headed --browser chrome",
     "cy:parallel": "cypress-parallel -s test -t 4 -d cypress/e2e/features/ -m false",

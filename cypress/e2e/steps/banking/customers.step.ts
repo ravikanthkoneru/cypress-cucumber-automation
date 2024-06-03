@@ -35,3 +35,12 @@ Then(/^I click on Add Customer button$/, function () {
 	this.customer_page = new CustomerPage()
     this.customer_page.click_add_customer_button()
 });
+
+When(/^I enter customer "([^"]*)" customer "([^"]*)" and postalcode "([^"]*)" to add customers$/, function (firstname,lastname,postalcode) {
+	console.log(firstname,lastname,postalcode);
+	this.customer_page = new CustomerPage()
+    this.customer_page.add_customer_details(firstname,lastname,postalcode)
+    
+});
+
+

@@ -4,117 +4,104 @@
     "elements": [
       {
         "description": "",
-        "id": "as-a-bank-manager-search-customers-on-the-banking-customers-tab;using-the-search-input-with-the-text-\"e859ab\"",
+        "id": "user-api;create-a-new-user",
         "keyword": "Scenario",
-        "line": 10,
-        "name": "Using the search input with the text \"E859AB\"",
+        "line": 18,
+        "name": "Create a new user",
         "steps": [
           {
             "arguments": [],
             "keyword": "Given ",
-            "line": 5,
-            "name": "I go to the Banking page",
+            "line": 19,
+            "name": "I have the API endpoint \"/users\"",
             "match": {
               "location": "not available:0"
             },
             "result": {
               "status": "passed",
-              "duration": 2900000000
+              "duration": 6000000
             }
           },
           {
-            "arguments": [],
-            "keyword": "And ",
-            "line": 6,
-            "name": "I see \"XYZ Bank\" in the title",
-            "match": {
-              "location": "not available:0"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 74000000
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "And ",
-            "line": 7,
-            "name": "I click on the Bank Manager Login button",
-            "match": {
-              "location": "not available:0"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 1043000000
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "Given ",
-            "line": 11,
-            "name": "I click on the Customers tab",
-            "match": {
-              "location": "not available:0"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 418000000
-            }
-          },
-          {
-            "arguments": [],
+            "arguments": [
+              {
+                "rows": [
+                  {
+                    "cells": [
+                      "name",
+                      "job"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "John Doe",
+                      "leader"
+                    ]
+                  }
+                ]
+              }
+            ],
             "keyword": "When ",
-            "line": 12,
-            "name": "I fill the search input with the \"E859AB\"",
+            "line": 20,
+            "name": "I send a POST request to the endpoint with the data",
             "match": {
               "location": "not available:0"
             },
             "result": {
               "status": "passed",
-              "duration": 726000000
+              "duration": 118000000
             }
           },
           {
             "arguments": [],
             "keyword": "Then ",
-            "line": 13,
-            "name": "the text \"Hermoine\" should be visible on the result table",
+            "line": 23,
+            "name": "the response status code should be 201",
             "match": {
               "location": "not available:0"
             },
             "result": {
               "status": "passed",
-              "duration": 60000000
+              "duration": 8000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 24,
+            "name": "the response should contain the created user with name \"John Doe\"",
+            "match": {
+              "location": "not available:0"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 5000000
             }
           }
         ],
         "tags": [
           {
-            "name": "@Customer",
+            "name": "@UserAPI",
             "line": 1
           },
           {
-            "name": "@test",
-            "line": 9
-          },
-          {
-            "name": "@searchCustomer",
-            "line": 9
+            "name": "@apiDeleteUserTest",
+            "line": 17
           }
         ],
         "type": "scenario"
       }
     ],
-    "id": "as-a-bank-manager-search-customers-on-the-banking-customers-tab",
+    "id": "user-api",
     "line": 2,
     "keyword": "Feature",
-    "name": "As a Bank Manager Search Customers on the Banking Customers tab",
+    "name": "User API",
     "tags": [
       {
-        "name": "@Customer",
+        "name": "@UserAPI",
         "line": 1
       }
     ],
-    "uri": "cypress\\e2e\\features\\UI_Customer.feature"
+    "uri": "cypress/e2e/features/API_Users.feature"
   }
 ]
